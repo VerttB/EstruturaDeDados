@@ -23,3 +23,12 @@ void printSt(Stack *t){
     printf("\n");
 }
 
+int popQ(void *t){
+        Stack **top = (Stack**)st;
+
+  Stack *aux = (*t);
+  int val = aux->value;
+  *t = (*t)->prox;
+  free(aux);
+  return val;
+}

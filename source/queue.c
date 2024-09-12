@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 #include "../headers/queue.h"
-
+#include "../headers/stack.h"
 void pushQ(void **st, int value){
   Queue **inicio = (Queue**)st;
   Queue *novo, *atual = NULL, *ant = NULL;
@@ -36,14 +36,36 @@ void pushQ(void **st, int value){
 }
 
 void printQ(Queue *q){
-    printf("printando...");
     if(q == NULL) return;
     Queue *aux;
     aux = q;
-
     while(aux != NULL){
         printf("%d ", aux->value);
         aux = aux->prox;
     }
     printf("\n");
+}
+
+int popQ(Queue **q){
+  Queue *aux = (*q);
+  int val = aux->value;
+  *q = (*q)->prox;
+  free(aux);
+  return val;
+}
+
+Queue *inverseQ(Queue *q){
+  Queue *aux = q;
+  Stack *auxSt = NULL;
+  while(aux != NULL){
+    pushS(&auxSt, popQ(&q));
+    pushQ(&q, popS(&auxSt));
+  }
+  
+
+
+
+
+
+
 }

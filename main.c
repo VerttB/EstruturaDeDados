@@ -17,6 +17,8 @@ int main(){
     queue->print(queue);
     printf("\n");
     stack->print(stack);
-
+    printf("------------------\n");
+    queue->data = inverseQ(&queue->data);
+    queue->print(queue);
     return 0;
 }
