@@ -1,12 +1,22 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include "headers/dataStructs.h"
+#include "source/genericStruct.c"
+
+
+
 
 int main(){
-    BigS *queue = newStructure("queue");
-    queue->pushar(&queue->sts, 5);
-    queue->pushar(&queue->sts, 3);
-    queue->pushar(&queue->sts, 4);
-    printSt(queue->sts);
+    DataSt *queue = newStructure(QUEUE);
+    DataSt *stack = newStructure(STACK);
+    queue->push(queue, 5);
+    queue->push(queue, 3);
+    queue->push(queue, 4);
+    stack->push(stack, 1);
+    stack->push(stack, 2);
+    stack->push(stack, 3);
+    queue->print(queue);
+    printf("\n");
+    stack->print(stack);
+
     return 0;
 }
