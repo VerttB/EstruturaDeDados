@@ -7,9 +7,11 @@ typedef struct dataSt{
     TYPE type;
     void (*push)(struct dataSt*, int);
     void (*print)(struct dataSt *);
+    void (*reverse)(struct dataSt *);
 }DataSt;
 
 DataSt *newStructure(TYPE);
 void print(DataSt *);
 void push(DataSt *, int);
+void reverse(DataSt *);
 #endif

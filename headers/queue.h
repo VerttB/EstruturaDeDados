@@ -7,4 +7,6 @@ typedef struct queue{
 
 void pushQ(void **, int);
 void printQ(Queue *);
+int popQ(void **);
+void reverseQ(void **);
 #endif

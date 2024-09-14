@@ -6,19 +6,13 @@
 
 
 int main(){
-    DataSt *queue = newStructure(QUEUE);
-    DataSt *stack = newStructure(STACK);
-    queue->push(queue, 5);
-    queue->push(queue, 3);
-    queue->push(queue, 4);
-    stack->push(stack, 1);
-    stack->push(stack, 2);
-    stack->push(stack, 3);
-    queue->print(queue);
-    printf("\n");
+    DataSt *stack = newStructure(DBLIST);
+    stack->push(stack,2);
+    stack->push(stack,5);
+    stack->push(stack,1);
     stack->print(stack);
-    printf("------------------\n");
-    queue->data = inverseQ(&queue->data);
-    queue->print(queue);
+  
+
+
     return 0;
 }

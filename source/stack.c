@@ -23,12 +23,21 @@ void printSt(Stack *t){
     printf("\n");
 }
 
-int popQ(void *t){
-        Stack **top = (Stack**)st;
-
-  Stack *aux = (*t);
+int popS(void **t){
+  Stack **top = (Stack**)t;
+  Stack *aux = (*top);
   int val = aux->value;
-  *t = (*t)->prox;
+  *top = (*top)->prox;
   free(aux);
   return val;
+}
+
+void reverseS(void **t){
+    void *auxSt = NULL;
+   
+    while(*t != NULL){
+        pushS(&auxSt, popS(t));
+    }
+     printSt(auxSt);
+     *t = auxSt;
 }

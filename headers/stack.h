@@ -7,8 +7,8 @@ typedef struct stack{
 
 void pushS(void **, int);
 void printSt(Stack *);
-Stack *reverse(Stack **);
+void reverseS(void **);
 Stack *intersection(Stack *, Stack *);
-void pop(Stack **);
+int popS(void **);
 
 #endif

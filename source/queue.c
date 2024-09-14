@@ -46,26 +46,21 @@ void printQ(Queue *q){
     printf("\n");
 }
 
-int popQ(Queue **q){
-  Queue *aux = (*q);
+int popQ(void **q){
+  Queue **queue = (Queue**)q;
+  Queue *aux = (*queue);
   int val = aux->value;
-  *q = (*q)->prox;
+  *q = (void*)(*queue)->prox;
   free(aux);
   return val;
 }
 
-Queue *inverseQ(Queue *q){
-  Queue *aux = q;
-  Stack *auxSt = NULL;
-  while(aux != NULL){
-    pushS(&auxSt, popQ(&q));
-    pushQ(&q, popS(&auxSt));
+void reverseQ(void **q){
+  void *queueVoid = *q;
+  void *auxSt = NULL; // pilha
+  while(*q != NULL){
+    pushS(&auxSt,popQ(q));  // Retira dafila e empilha inversamente
   }
-  
 
-
-
-
-
-
+  *q = auxSt;
 }
